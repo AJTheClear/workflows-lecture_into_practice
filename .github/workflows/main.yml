@@ -43,18 +43,17 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar-cache-${{ hashFiles('**/*.java') }}  # Modify if needed
+          key: ${{ runner.os }}-sonar-cache-${{ hashFiles('**/*.java') }}
           restore-keys: |
             ${{ runner.os }}-sonar-cache-
 
       - name: Set up SonarCloud
-        uses: SonarSource/sonarcloud-github-action@v2.0
+        uses: SonarSource/sonarcloud-github-action@master
         with:
-          sonar-token: ${{ secrets.SONAR_TOKEN }}  # Store your SonarCloud token in GitHub secrets
+          sonar-token: ${{ secrets.SONAR_TOKEN }}
 
       - name: Run SonarCloud analysis
         run: |
-          # You might need to adjust this command depending on your project structure
           sonar-scanner
   Build:
     runs-on: ubuntu-latest
