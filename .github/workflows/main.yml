@@ -48,10 +48,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-sonar-cache-
 
-      - name: Set up SonarCloud
-        uses: SonarSource/sonarcloud-github-action@master
+      #- name: Set up SonarCloud
+      #  uses: SonarSource/sonarcloud-github-action@master
+      #  env:
+      #    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Build and analyze
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: ./gradlew build sonar --info
 
       - name: Run SonarCloud analysis
         run: |
