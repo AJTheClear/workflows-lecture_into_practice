@@ -37,7 +37,7 @@ jobs:
       - name: Set up JDK (if you're using Java, adjust as needed for your project)
         uses: actions/setup-java@v4
         with:
-          distribution: 'adoptopenjdk'
+          distribution: 'temurin'
           java-version: '11'
 
       - name: Cache SonarCloud dependencies
