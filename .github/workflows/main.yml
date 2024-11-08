@@ -15,7 +15,7 @@ jobs:
       - name: Run Snyk test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        run: snyk test --file=component-test/requirements.txt
+        run: snyk test --all-projects
   Build:
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
