@@ -28,11 +28,38 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         run: snyk test --file=component-test/requirements.txt
+  SonarCloud_Scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
+      - name: Set up JDK (if you're using Java, adjust as needed for your project)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+
+      - name: Cache SonarCloud dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar-cache-${{ hashFiles('**/*.java') }}  # Modify if needed
+          restore-keys: |
+            ${{ runner.os }}-sonar-cache-
+
+      - name: Set up SonarCloud
+        uses: SonarSource/sonarcloud-github-action@v2.0
+        with:
+          sonar-token: ${{ secrets.SONAR_TOKEN }}  # Store your SonarCloud token in GitHub secrets
+
+      - name: Run SonarCloud analysis
+        run: |
+          # You might need to adjust this command depending on your project structure
+          sonar-scanner
   Build:
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
-    needs: [Snyk_Scan]
+    needs: [Snyk_Scan, SonarCloud_Scan]
     steps:
       - name: Clone down repository
         uses: actions/checkout@v4       
