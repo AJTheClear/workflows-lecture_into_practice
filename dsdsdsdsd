@@ -1,0 +1,47 @@
+[33mcommit 4c74b2aa1d47be8f7425a775f3894f15f5b5f672[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: AJTheClear <jasen.bs@gmail.com>
+Date:   Fri Oct 25 16:16:16 2024 +0300
+
+    fixed another typo
+
+[33mcommit 98fb7a81e796ada0091fd464ac5006e94f29eb23[m
+Author: AJTheClear <jasen.bs@gmail.com>
+Date:   Fri Oct 25 16:15:05 2024 +0300
+
+    fixed typo
+
+[33mcommit 35170501ed1db8ebdc03ca584ab1a77dd032c2d6[m
+Author: AJTheClear <jasen.bs@gmail.com>
+Date:   Fri Oct 25 16:13:46 2024 +0300
+
+    downloading artifacts
+
+[33mcommit 0e7c3b4b8148afbc675275fc79981a660cc0ffe5[m
+Author: AJTheClear <jasen.bs@gmail.com>
+Date:   Fri Oct 25 16:09:59 2024 +0300
+
+    added artifacts
+
+[33mcommit 7f08b7a6a804fe76145bf99f8af9e3b0a26bef53[m
+Author: AJTheClear <jasen.bs@gmail.com>
+Date:   Fri Oct 25 15:58:00 2024 +0300
+
+    added testing
+
+[33mcommit 38e5c045933bfd7002c9ffe0be5482e8841e7200[m
+Author: AJTheClear <jasen.bs@gmail.com>
+Date:   Fri Oct 25 15:45:45 2024 +0300
+
+    changed yaml file
+
+[33mcommit 906f19af83c007378021f8ffcc87859f65eb57fe[m
+Author: YasenUzunov <127042819+AJTheClear@users.noreply.github.com>
+Date:   Fri Oct 25 14:58:12 2024 +0300
+
+    task-setup.yml
+
+[33mcommit e94e430afe035dc9e1ad8ec2a11755d12575850c[m
+Author: YasenUzunov <127042819+AJTheClear@users.noreply.github.com>
+Date:   Fri Oct 25 14:55:19 2024 +0300
+
+    Initial commit
