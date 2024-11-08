@@ -5,9 +5,21 @@ env:
   docker_password: ${{ secrets.GITHUB_TOKEN }}
   GIT_COMMIT: ${{ github.sha }}
 jobs:
+  Snyk_Scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install Snyk
+        run: npm install -g snyk
+      - name: Run Snyk test
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: snyk test --all-projects
   Build:
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
+    needs: [Snyk_Scan]
     steps:
       - name: Clone down repository
         uses: actions/checkout@v4       
