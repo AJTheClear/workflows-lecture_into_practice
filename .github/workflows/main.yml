@@ -50,7 +50,7 @@ jobs:
 
       - name: Set up SonarCloud
         uses: SonarSource/sonarcloud-github-action@master
-        with:
+        env:
           sonar-token: ${{ secrets.SONAR_TOKEN }}
 
       - name: Run SonarCloud analysis
